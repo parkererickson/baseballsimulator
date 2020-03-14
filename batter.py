@@ -1,10 +1,16 @@
 class Batter():
-	def __init__(self):
-		self.name = ""
-		self.p1b = ""
-		self.p2b = ""
-		self.p3b = ""
-		self.phr = ""
-		self.ptw = ""
-		self.pso = ""
-		self.pbo = ""
+	def __init__(self, name, batterDF):
+		self.name = name
+		row = batterDF.loc[self.name]
+		PA = row["PA"]
+		self.p1b = row["1B"] / PA
+		self.p2b = row["2B"] / PA
+		self.p3b = row["3B"] / PA
+		self.phr = row["HR"] / PA
+		self.ptw = (row["BB"] + row["IBB"] + row["HBP"]) / PA
+		self.pso = row["SO"] / PA
+		self.pbo = ((PA - row["1B"] - row["2B"] - row["3B"] - row["HR"] 
+				              - row["BB"] - row["IBB"] - row["HBP"] - row["SO"]) / PA)
+
+	def __repr__(self):
+		return(self.name)
