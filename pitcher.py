@@ -11,6 +11,9 @@ class Pitcher():
 		self.pso = row["SO"] / PA
 		self.pbo = ((PA - row["1B"] - row["2B"] - row["3B"] - row["HR"] 
 				              - row["BB"] - row["IBB"] - row["HBP"] - row["SO"]) / PA)
+		self.throws = "R"
 
+	def getThrowingHand(self):
+		return self.throws
 	def __repr__(self):
 		return(self.name)

@@ -32,23 +32,23 @@ def read_data(battingData, pitchingData, leagueData):
 
 # fills and returns attributes for the batter and pitcher objects in the lineup
 def fill_statline(leagueDF):
-	PA = leagueDF.loc[2017, "PA"]
-	leagueDF.loc[2017, "p1b"] = leagueDF.loc[2017, "1B"] / PA
-	leagueDF.loc[2017, "p2b"] = leagueDF.loc[2017, "2B"] / PA
-	leagueDF.loc[2017, "p3b"] = leagueDF.loc[2017, "3B"] / PA
-	leagueDF.loc[2017, "phr"] = leagueDF.loc[2017, "HR"] / PA
-	leagueDF.loc[2017, "ptw"] = (leagueDF.loc[2017, "BB"] 
-								 + leagueDF.loc[2017, "IBB"] 
-								 + leagueDF.loc[2017, "HBP"]) / PA
-	leagueDF.loc[2017, "pso"] = leagueDF.loc[2017]["SO"] / PA
-	leagueDF.loc[2017, "pbo"] = (PA - leagueDF.loc[2017, "1B"] 
-								    - leagueDF.loc[2017, "2B"] 
-						            - leagueDF.loc[2017, "3B"] 
-						            - leagueDF.loc[2017, "HR"] 
-						            - leagueDF.loc[2017, "BB"]
-						            - leagueDF.loc[2017, "IBB"] 
-						            - leagueDF.loc[2017, "HBP"] 
-						            - leagueDF.loc[2017, "SO"]) / PA
+	PA = leagueDF.loc[2019, "PA"]
+	leagueDF.loc[2019, "p1b"] = leagueDF.loc[2019, "1B"] / PA
+	leagueDF.loc[2019, "p2b"] = leagueDF.loc[2019, "2B"] / PA
+	leagueDF.loc[2019, "p3b"] = leagueDF.loc[2019, "3B"] / PA
+	leagueDF.loc[2019, "phr"] = leagueDF.loc[2019, "HR"] / PA
+	leagueDF.loc[2019, "ptw"] = (leagueDF.loc[2019, "BB"] 
+								 + leagueDF.loc[2019, "IBB"] 
+								 + leagueDF.loc[2019, "HBP"]) / PA
+	leagueDF.loc[2019, "pso"] = leagueDF.loc[2019]["SO"] / PA
+	leagueDF.loc[2019, "pbo"] = (PA - leagueDF.loc[2019, "1B"] 
+								    - leagueDF.loc[2019, "2B"] 
+						            - leagueDF.loc[2019, "3B"] 
+						            - leagueDF.loc[2019, "HR"] 
+						            - leagueDF.loc[2019, "BB"]
+						            - leagueDF.loc[2019, "IBB"] 
+						            - leagueDF.loc[2019, "HBP"] 
+						            - leagueDF.loc[2019, "SO"]) / PA
 	return(leagueDF)
 
 # creates and returns a dataframe containing baserunning probabilities for each 

@@ -11,6 +11,10 @@ class Batter():
 		self.pso = row["SO"] / PA
 		self.pbo = ((PA - row["1B"] - row["2B"] - row["3B"] - row["HR"] 
 				              - row["BB"] - row["IBB"] - row["HBP"] - row["SO"]) / PA)
+		self.stance = "R"
+
+	def getBattingStance(self):
+		return self.stance
 
 	def __repr__(self):
 		return(self.name)
